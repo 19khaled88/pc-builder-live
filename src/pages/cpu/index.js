@@ -2,9 +2,7 @@ import RootLayout from '@/components/Layouts/RootLayout'
 import User from '@/components/User/User'
 // import Processor from '@/components/Processor/Processor'
 
-
-const CpuPage = ({display}) => {
-
+const CpuPage = ({ display }) => {
   // const { cpu } = allCpus
   return (
     <div>
@@ -24,20 +22,19 @@ CpuPage.getLayout = function getLayout(page) {
 }
 
 export async function getStaticProps() {
+  //   if(typeof window === undefined){
+  //     return{
+  //       props:{
+  //         display:[]
+  //       }
+  //     }
+  //   }
+  const res = await fetch(`https://jsonplaceholder.typicode.com/users`)
+  const data = await res.json()
 
-//   if(typeof window === undefined){
-//     return{
-//       props:{
-//         display:[]
-//       }
-//     }
-//   }
-  const res = await fetch(`https://pc-builder-live-seven.vercel.app`)
-    const data = await res.json()
-   
-    return {
-      props: {
-        display: data,
-      },
-    }
+  return {
+    props: {
+      display: data,
+    },
+  }
 }
