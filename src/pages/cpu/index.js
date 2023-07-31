@@ -25,14 +25,14 @@ CpuPage.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
 
-  if(typeof window === undefined){
-    return{
-      props:{
-        display:[]
-      }
-    }
-  }
-  const res = await fetch(`https://jsonplaceholder.typicode.com/users`)
+//   if(typeof window === undefined){
+//     return{
+//       props:{
+//         display:[]
+//       }
+//     }
+//   }
+  const res = await fetch(`https://pc-builder-live-seven.vercel.app`)
     const data = await res.json()
    
     return {
