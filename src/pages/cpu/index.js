@@ -23,13 +23,13 @@ CpuPage.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
 
-  if(typeof window === undefined){
-    return{
-      props:{
-        allCpus:[]
-      }
-    }
-  }
+//   if(typeof window === undefined){
+//     return{
+//       props:{
+//         allCpus:[]
+//       }
+//     }
+//   }
   const res = await fetch('http://localhost:3004/db')
     const data = await res.json()
    
