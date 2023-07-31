@@ -1,8 +1,9 @@
 import RootLayout from '@/components/Layouts/RootLayout'
-import Processor from '@/components/Processor/Processor'
+import User from '@/components/User/User'
+// import Processor from '@/components/Processor/Processor'
 
 
-const CpuPage = ({ allCpus }) => {
+const CpuPage = ({display}) => {
 
   // const { cpu } = allCpus
   return (
@@ -10,7 +11,8 @@ const CpuPage = ({ allCpus }) => {
       <h1 className="text-center text-lg font-bold pt-5">
         All the available processors
       </h1>
-      <Processor cpu={allCpus} />
+      {/* <Processor cpu={allCpus} /> */}
+      <User display={display} />
     </div>
   )
 }
@@ -30,12 +32,12 @@ export async function getStaticProps() {
 //       }
 //     }
 //   }
-  const res = await fetch('http://localhost:3004/db')
+  const res = await fetch('https://jsonplaceholder.typicode.com/users')
     const data = await res.json()
    
     return {
       props: {
-        allCpus: data,
+        display: data,
       },
     }
 }
