@@ -25,13 +25,13 @@ CpuPage.getLayout = function getLayout(page) {
 
 export async function getStaticProps() {
 
-//   if(typeof window === undefined){
-//     return{
-//       props:{
-//         allCpus:[]
-//       }
-//     }
-//   }
+  if(typeof window === undefined){
+    return{
+      props:{
+        display:[]
+      }
+    }
+  }
   const res = await fetch('https://jsonplaceholder.typicode.com/users')
     const data = await res.json()
    
