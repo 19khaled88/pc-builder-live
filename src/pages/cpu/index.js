@@ -32,7 +32,7 @@ export async function getStaticProps() {
       }
     }
   }
-  const res = await fetch(`${process.env.LIVE_URL}`)
+  const res = await fetch(`https://pc-builder-live-seven.vercel.app`)
     const data = await res.json()
    
     return {
