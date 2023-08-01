@@ -1,7 +1,0 @@
-{
-    "outputDirectory":"build",
-    "buildCommand":"next build",
-    "clearUrls":true,
-    "devCommand":"next dev"
-    
-}
