@@ -1,9 +1,10 @@
 import Image from 'next/image'
-const Processor = ({ cpu }) => {
-  const cpuCard = (cpu) => {
+const Processor = ({ display }) => {
+  
+  const cpuCard = (display) => {
     let array = []
-    for (let data in cpu) {
-      cpu[data].map((data) => {
+    for (let data in display) {
+      display[data].map((data) => {
         array.push(
           <div key={data.id} className="card bg-base-100 shadow-xl p-2">
             <figure className="pt-5 pl-5 pr-5">
@@ -35,7 +36,7 @@ const Processor = ({ cpu }) => {
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-5 ">
-      {cpuCard(cpu)}
+      {cpuCard(display)}
     </div>
   )
 }

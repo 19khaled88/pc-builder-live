@@ -5,7 +5,7 @@ exports.id = 202;
 exports.ids = [202];
 exports.modules = {
 
-/***/ 604:
+/***/ 918:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 // ESM COMPAT FLAG
@@ -48,17 +48,85 @@ var _app = __webpack_require__(8375);
 var jsx_runtime = __webpack_require__(5893);
 // EXTERNAL MODULE: ./src/components/Layouts/RootLayout.js + 2 modules
 var RootLayout = __webpack_require__(8002);
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(6689);
-;// CONCATENATED MODULE: ./src/components/User/User.js
+// EXTERNAL MODULE: ./node_modules/next/image.js
+var next_image = __webpack_require__(5675);
+var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
+;// CONCATENATED MODULE: ./src/components/Processor/Processor.js
 
 
-const User = ({ display })=>{
+const Processor = ({ display })=>{
+    const cpuCard = (display)=>{
+        let array = [];
+        for(let data in display){
+            display[data].map((data)=>{
+                array.push(/*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                    className: "card bg-base-100 shadow-xl p-2",
+                    children: [
+                        /*#__PURE__*/ jsx_runtime.jsx("figure", {
+                            className: "pt-5 pl-5 pr-5",
+                            children: /*#__PURE__*/ jsx_runtime.jsx((image_default()), {
+                                src: data.image,
+                                width: 200,
+                                height: 200,
+                                layout: "responsive",
+                                alt: "Shoes"
+                            })
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                            className: "card-body p-1",
+                            children: [
+                                /*#__PURE__*/ jsx_runtime.jsx("p", {
+                                    className: "card-title text-sm text-start",
+                                    children: data.name
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: "flex flex-row justify-between text-sm md:text-md lg:text-md",
+                                    children: [
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("p", {
+                                            children: [
+                                                "Category : ",
+                                                data.category
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("p", {
+                                            className: "text-right",
+                                            children: [
+                                                "Rating : ",
+                                                data.rating
+                                            ]
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                    className: "card-actions flex flex-row justify-between",
+                                    children: [
+                                        /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+                                            className: "badge badge-outline",
+                                            children: [
+                                                "Price : ",
+                                                data.price
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ jsx_runtime.jsx("div", {
+                                            className: "badge badge-outline",
+                                            children: "Products"
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                }, data.id));
+            });
+        }
+        return array;
+    };
     return /*#__PURE__*/ jsx_runtime.jsx("div", {
-        children: "User"
+        className: "grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 p-5 ",
+        children: cpuCard(display)
     });
 };
-/* harmony default export */ const User_User = (User);
+/* harmony default export */ const Processor_Processor = (Processor);
 
 ;// CONCATENATED MODULE: ./src/pages/cpu/index.js
 
@@ -73,7 +141,7 @@ const CpuPage = ({ display })=>{
                 className: "text-center text-lg font-bold pt-5",
                 children: "All the available processors"
             }),
-            /*#__PURE__*/ jsx_runtime.jsx(User_User, {
+            /*#__PURE__*/ jsx_runtime.jsx(Processor_Processor, {
                 display: display
             })
         ]
@@ -87,7 +155,7 @@ CpuPage.getLayout = function getLayout(page) {
 };
 async function getStaticProps() {
     if (false) {}
-    const res = await fetch(`${process.env.TEMP_URL}`);
+    const res = await fetch(`${process.env.LOCAL_URL}/db`);
     const data = await res.json();
     return {
         props: {
@@ -178,6 +246,20 @@ module.exports = require("next/dist/server/utils.js");
 
 /***/ }),
 
+/***/ 3918:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/amp-context.js");
+
+/***/ }),
+
+/***/ 5732:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/amp-mode.js");
+
+/***/ }),
+
 /***/ 3280:
 /***/ ((module) => {
 
@@ -192,10 +274,38 @@ module.exports = require("next/dist/shared/lib/constants.js");
 
 /***/ }),
 
+/***/ 5132:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/get-img-props.js");
+
+/***/ }),
+
+/***/ 2796:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/head-manager-context.js");
+
+/***/ }),
+
 /***/ 8743:
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/html-context.js");
+
+/***/ }),
+
+/***/ 744:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/image-config-context.js");
+
+/***/ }),
+
+/***/ 5843:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/image-config.js");
 
 /***/ }),
 
@@ -255,6 +365,13 @@ module.exports = require("next/dist/shared/lib/router/utils/resolve-href.js");
 
 /***/ }),
 
+/***/ 2470:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/side-effect.js");
+
+/***/ }),
+
 /***/ 9232:
 /***/ ((module) => {
 
@@ -262,10 +379,24 @@ module.exports = require("next/dist/shared/lib/utils.js");
 
 /***/ }),
 
+/***/ 618:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/utils/warn-once.js");
+
+/***/ }),
+
 /***/ 6689:
 /***/ ((module) => {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ 6405:
+/***/ ((module) => {
+
+module.exports = require("react-dom");
 
 /***/ })
 
@@ -276,7 +407,7 @@ module.exports = require("react");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [207,664,544,2], () => (__webpack_exec__(604)));
+var __webpack_exports__ = __webpack_require__.X(0, [207,636,61,544,2], () => (__webpack_exec__(918)));
 module.exports = __webpack_exports__;
 
 })();

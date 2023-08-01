@@ -1,8 +1,11 @@
 import RootLayout from '@/components/Layouts/RootLayout'
-import User from '@/components/User/User'
+import Processor from '@/components/Processor/Processor'
+
 // import Processor from '@/components/Processor/Processor'
 
+const port = process.env.LOCAL_URL || 5000
 const CpuPage = ({ display }) => {
+
   // const { cpu } = allCpus
   return (
     <div>
@@ -10,7 +13,7 @@ const CpuPage = ({ display }) => {
         All the available processors
       </h1>
       {/* <Processor cpu={allCpus} /> */}
-      <User display={display} />
+      <Processor display={display} />
     </div>
   )
 }
@@ -29,7 +32,7 @@ export async function getStaticProps() {
         }
       }
     }
-  const res = await fetch(`${process.env.TEMP_URL}`)
+  const res = await fetch(`${process.env.LOCAL_URL}/db`)
   const data = await res.json()
 
   return {
