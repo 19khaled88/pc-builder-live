@@ -29,7 +29,7 @@ export async function getStaticProps() {
         }
       }
     }
-  const res = await fetch(`${process.env.LOCAL_URL}`)
+  const res = await fetch(`${process.env.TEMP_URL}`)
   const data = await res.json()
 
   return {

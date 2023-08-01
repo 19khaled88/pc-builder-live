@@ -2,6 +2,6 @@
     "outputDirectory":"build",
     "buildCommand":"next build",
     "clearUrls":true,
-    "devCommand":"next dev",
-    "rewrites": [{ "source": "/src/(.*)", "destination": "/src/index.html" }]
+    "devCommand":"next dev"
+    
 }
